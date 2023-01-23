@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 20:26:16 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/23 00:57:08 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/01/23 02:18:52 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_complex	pos_to_complex(int x, int y)
 	});
 }
 
-int	inter_to_color(size_t iter_count, size_t max_iter)
+int	inter_to_rgb_hues(size_t iter_count, size_t max_iter)
 {
 	int		r;
 	int		g;

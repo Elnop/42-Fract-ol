@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 22:28:42 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/23 01:53:46 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/01/23 04:49:55 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ void	put_julia(t_mlxapp app)
 		x = 0;
 		while (x < WINDOW_HEIGHT)
 		{
-			last_iter = julia_px_iter(pos_to_complex(x, y), JULIA_MAX_ITER);
+			last_iter = julia_px_iter(pos_to_complex(x, y), app.max_iter);
 			if (last_iter)
 				image_put_px(img, x, y,
-					inter_to_color(last_iter, JULIA_MAX_ITER));
+					inter_to_rgb_hues(last_iter, app.max_iter));
 			x++;
 		}
 		y++;
 	}
-	printf("TEST\n");
 	mlx_put_image_to_window(app.mlx, app.win, img.img, 0, 0);
+	image_delete(app.mlx, img);
 }

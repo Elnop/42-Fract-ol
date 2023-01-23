@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 20:41:20 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/23 01:45:47 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/01/23 04:50:46 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,16 @@ static int	hooks_handler(int keycode, t_mlxapp *app)
 {
 	if (keycode == XK_Escape)
 		destroy_app(app);
+	if (keycode == XK_Right)
+	{
+		app->max_iter++;
+		render(*app, JULIA);
+	}
+	if (app->max_iter > 0 && keycode == XK_Left)
+	{
+		app->max_iter--;
+		render(*app, JULIA);
+	}
 	return (1);
 }
 

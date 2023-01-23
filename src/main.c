@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:36:24 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/23 00:00:10 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/01/23 04:50:25 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(void)
 {
 	t_mlxapp	app;
 
-	if (!init_app(&app))
+	if (!init_app(&app, JULIA))
 		return ((void)lp_putendl_fd("Can't init MLX App", 1), 1);
 	init_hooks(&app);
 	render(app, JULIA);

@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 21:04:30 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/23 02:11:28 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/01/23 04:47:57 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,6 @@
 # define JULIA_C_R -0.038088
 # define JULIA_C_I 0.9754633
 
-typedef struct s_mlxapp {
-	void	*mlx;
-	void	*win;
-}	t_mlxapp;
-
 typedef struct s_complex
 {
 	double		r;
@@ -47,16 +42,22 @@ typedef struct s_image {
 	int		endian;
 }	t_image;
 
+typedef struct s_mlxapp {
+	void	*mlx;
+	void	*win;
+	size_t	max_iter;
+}	t_mlxapp;
+
 enum e_fractal {
 	JULIA,
 	MANDALBROT
 };
 
-// UTILS
+// CONVERTIONS
 t_complex	pos_to_complex(int x, int y);
-int			inter_to_color(size_t iter_count, size_t max_iter);
+int			inter_to_rgb_hues(size_t iter_count, size_t max_iter);
 // APP
-bool		init_app(t_mlxapp *app);
+bool		init_app(t_mlxapp *app, enum e_fractal fractal);
 int			destroy_app(t_mlxapp *app);
 // HOOKS
 void		init_hooks(t_mlxapp *app);

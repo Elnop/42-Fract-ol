@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 21:04:30 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/23 04:47:57 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/01/24 21:46:47 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,16 @@
 # define WINDOW_HEIGHT 1400
 # define WINDOW_WIDTH 1400
 
-# define JULIA_MAX_ITER 20
-# define JULIA_C_R -0.038088
-# define JULIA_C_I 0.9754633
+# define JULIA_MAX_ITER 60
+
+# define JULIA_C_R -0.8
+# define JULIA_C_I 0.156
+
+// # define JULIA_C_R -0.038088
+// # define JULIA_C_I 0.9754633
+
+// # define JULIA_C_R 0.285
+// # define JULIA_C_I 0.01
 
 typedef struct s_complex
 {
@@ -46,6 +53,9 @@ typedef struct s_mlxapp {
 	void	*mlx;
 	void	*win;
 	size_t	max_iter;
+	double	zoom;
+	double	offset_x;
+	double	offset_y;
 }	t_mlxapp;
 
 enum e_fractal {
@@ -54,7 +64,7 @@ enum e_fractal {
 };
 
 // CONVERTIONS
-t_complex	pos_to_complex(int x, int y);
+t_complex	pos_to_complex(t_mlxapp app, int x, int y);
 int			inter_to_rgb_hues(size_t iter_count, size_t max_iter);
 // APP
 bool		init_app(t_mlxapp *app, enum e_fractal fractal);
@@ -65,6 +75,9 @@ void		init_hooks(t_mlxapp *app);
 t_image		image_new(void	*mlx);
 void		image_delete(void	*mlx, t_image img);
 void		image_put_px(t_image img, int x, int y, int color);
+int			image_getcolor(t_image img, int x, int y);
+// ZOOM
+
 // FRACTALS
 void		put_julia(t_mlxapp app);
 // RENDER

@@ -6,17 +6,22 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 20:26:16 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/23 02:18:52 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/01/24 19:20:14 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-t_complex	pos_to_complex(int x, int y)
+t_complex	pos_to_complex(t_mlxapp app, int x, int y)
 {
+	double r;
+	double i;
+	
+	r = (-2 / app.zoom) + app.offset_x + x * (((2 / app.zoom + app.offset_x) - (-2 / app.zoom + app.offset_x)) / WINDOW_WIDTH);
+	i = (-2 / app.zoom) + app.offset_y + y * (((2 / app.zoom + app.offset_y) - (-2 / app.zoom + app.offset_y)) / WINDOW_HEIGHT);
 	return ((t_complex){
-		.r = (2.0 * (x - WINDOW_WIDTH / 2) / (0.5 * WINDOW_HEIGHT)),
-		.i = (2.0 * (y - WINDOW_HEIGHT / 2) / (0.5 * WINDOW_WIDTH))
+		.r = r,
+		.i = i
 	});
 }
 

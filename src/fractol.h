@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 21:04:30 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/24 21:46:47 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/01/26 04:09:33 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,28 @@
 # define WINDOW_HEIGHT 1400
 # define WINDOW_WIDTH 1400
 
-# define JULIA_MAX_ITER 60
+# define MAX_ITER 20
 
-# define JULIA_C_R -0.8
-# define JULIA_C_I 0.156
+# define C_R -1.735
+# define C_I 0.09
+# define P 2
+# define Q 2
 
-// # define JULIA_C_R -0.038088
-// # define JULIA_C_I 0.9754633
+// # define C_R -0.743643887037151
+// # define C_I 0.13182590420533
 
-// # define JULIA_C_R 0.285
-// # define JULIA_C_I 0.01
+// # define C_R -0.038088
+// # define C_I 0.9754633
+
+// # define C_R 0.285
+// # define C_I 0.01
+
+typedef enum e_fractal {
+	JULIA,
+	MANDELBROT,
+	NOVA,
+	NOVABROT
+}	t_fractal;
 
 typedef struct s_complex
 {
@@ -49,19 +61,23 @@ typedef struct s_image {
 	int		endian;
 }	t_image;
 
-typedef struct s_mlxapp {
-	void	*mlx;
-	void	*win;
-	size_t	max_iter;
-	double	zoom;
-	double	offset_x;
-	double	offset_y;
-}	t_mlxapp;
+typedef struct s_pixel {
+	t_complex	pos;
+	size_t		last_iter;
+}	t_pixel;
 
-enum e_fractal {
-	JULIA,
-	MANDALBROT
-};
+typedef struct s_mlxapp {
+	void		*mlx;
+	void		*win;
+	t_fractal	fractal;
+	t_complex	c;
+	int			p;
+	int			q;
+	size_t		max_iter;
+	double		zoom;
+	double		offset_x;
+	double		offset_y;
+}	t_mlxapp;
 
 // CONVERTIONS
 t_complex	pos_to_complex(t_mlxapp app, int x, int y);
@@ -80,7 +96,10 @@ int			image_getcolor(t_image img, int x, int y);
 
 // FRACTALS
 void		put_julia(t_mlxapp app);
+void		put_mandelbrot(t_mlxapp app);
+void		put_nova(t_mlxapp app);
+void		put_novabrot(t_mlxapp app);
 // RENDER
-void		render(t_mlxapp app, enum e_fractal fractal);
+void		render(t_mlxapp app);
 
 #endif

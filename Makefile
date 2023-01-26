@@ -4,11 +4,15 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -g3
 
 FILES = main \
+		render \
 		app \
 		convert \
 		hooks \
 		images \
-		julia
+		julia \
+		mandelbrot \
+		novabrot \
+		nova \
 
 SRCS_DIR = src
 SRCS = $(addprefix $(SRCS_DIR)/, $(addsuffix .c, $(FILES)))

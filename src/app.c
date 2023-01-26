@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:00:14 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/24 21:46:39 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/01/26 03:21:17 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@ bool	init_app(t_mlxapp *app, enum e_fractal fractal)
 	app->win = mlx_new_window(app->mlx, WINDOW_HEIGHT, WINDOW_WIDTH, "fractol");
 	if (!app->win)
 		return (false);
-	if (fractal == JULIA)
-		app->max_iter = JULIA_MAX_ITER;
+	app->fractal = fractal;
+	app->c = (t_complex){C_R, C_I};
+	app->p = P;
+	app->q = Q;
+	app->max_iter = MAX_ITER;
 	app->zoom = 1.0;
 	app->offset_x = 0.0;
 	app->offset_y = 0.0;

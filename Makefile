@@ -11,8 +11,8 @@ FILES = main \
 		images \
 		julia \
 		mandelbrot \
-		novabrot \
-		nova \
+		absbrot \
+		burning_ship \
 
 SRCS_DIR = src
 SRCS = $(addprefix $(SRCS_DIR)/, $(addsuffix .c, $(FILES)))

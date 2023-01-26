@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelbrot.c                                       :+:      :+:    :+:   */
+/*   burning_ship.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 23:22:15 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/26 15:37:35 by lperroti         ###   ########.fr       */
+/*   Created: 2023/01/26 10:42:33 by lperroti          #+#    #+#             */
+/*   Updated: 2023/01/26 13:46:55 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+#include <math.h>
 
-size_t	iter_mandelbrot(t_mlxapp app, t_complex z)
+size_t	iter_burning_ship(t_mlxapp app, t_complex z)
 {
 	size_t		iter;
 	t_complex	z0;
 
 	iter = 0;
+	z.r = fabs(z.r);
+	z.i = fabs(z.i);
 	z0 = z;
 	while (iter < app.max_iter)
 	{

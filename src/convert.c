@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 20:26:16 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/25 20:40:44 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/01/26 10:40:49 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_complex	pos_to_complex(t_mlxapp app, int x, int y)
 {
-	double r;
-	double i;
+	double	r;
+	double	i;
 
 	r = (-2 / app.zoom) + app.offset_x + x
 		* (
@@ -33,46 +33,21 @@ t_complex	pos_to_complex(t_mlxapp app, int x, int y)
 
 int	inter_to_rgb_hues(size_t iter_count, size_t max_iter)
 {
-	int		r;
-	int		g;
-	int		b;
+	t_color	color;
 	float	hue;
 
 	hue = (float)iter_count / max_iter * 360;
-	if (hue > 300) {
-        r = 0;
-        g = (int) ((240 - hue) / 60 * 255);
-        b = 255;
-    }
+	if (hue > 300)
+		color = (t_color){.b = (char)255, .g = (char)((240 - hue) / 60 * 255)};
 	else if (hue > 240)
-	{
-        r = 0;
-        g = 255;
-        b = (int) ((hue - 120) / 60 * 255);
-    }
+		color = (t_color){.g = (char)255, .b = (char)((hue - 120) / 60 * 255)};
 	else if (hue > 180)
-	{
-        r = (int) ((120 - hue) / 60 * 255);
-        g = 255;
-        b = 0;
-    }
+		color = (t_color){.g = (char)255, .r = (char)((120 - hue) / 60 * 255)};
 	else if (hue > 120)
-	{
-        r = 255;
-        g = (int) (hue / 60 * 255);
-        b = 0;
-    }
+		color = (t_color){.r = (char)255, .g = (char)(hue / 60 * 255)};
 	else if (hue > 60)
-	{
-        r = (int) ((hue - 240) / 60 * 255);
-        g = 0;
-        b = 255;
-    }
+		color = (t_color){.b = (char)255, .r = (char)((hue - 240) / 60 * 255)};
 	else
-	{
-        r = 255;
-        g = 0;
-        b = (int) ((360 - hue) / 60 * 255);
-    }
-    return (r << 16) | (g << 8) | b;
+		color = (t_color){.r = (char)255, .b = (char)((360 - hue) / 60 * 255)};
+	return (color.hex);
 }

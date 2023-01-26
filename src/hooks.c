@@ -6,12 +6,24 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 20:41:20 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/26 03:51:46 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/01/26 14:09:17 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 #include <math.h>
+
+static void	zoom_events(int keycode, t_mlxapp *app)
+{
+	if (keycode == XK_Right)
+		app->offset_x -= 0.1 / app->zoom;
+	if (keycode == XK_Left)
+		app->offset_x += 0.1 / app->zoom;
+	if (keycode == XK_Up)
+		app->offset_y += 0.1 / app->zoom;
+	if (keycode == XK_Down)
+		app->offset_y -= 0.1 / app->zoom;
+}
 
 static int	hooks_handler(int keycode, t_mlxapp *app)
 {
@@ -23,6 +35,10 @@ static int	hooks_handler(int keycode, t_mlxapp *app)
 	}
 	if (keycode == XK_i)
 		app->max_iter = 10;
+	if (keycode == XK_p)
+		app->p++;
+	if (app->p > 2 && keycode == XK_o)
+		app->p--;
 	if (keycode == XK_Escape)
 	{
 		destroy_app(app);
@@ -32,14 +48,7 @@ static int	hooks_handler(int keycode, t_mlxapp *app)
 		app->max_iter = app->max_iter * 1.1 + 1;
 	if (app->max_iter > 0 && keycode == XK_z)
 		app->max_iter = app->max_iter / 1.1 - 1;
-	if (keycode == XK_Right)
-		app->offset_x -= 0.1 / app->zoom;
-	if (keycode == XK_Left)
-		app->offset_x += 0.1 / app->zoom;
-	if (keycode == XK_Up)
-		app->offset_y += 0.1 / app->zoom;
-	if (keycode == XK_Down)
-		app->offset_y -= 0.1 / app->zoom;
+	zoom_events(keycode, app);
 	render(*app);
 	return (1);
 }
@@ -47,10 +56,10 @@ static int	hooks_handler(int keycode, t_mlxapp *app)
 static int	mouse_hooks_handler(int keycode, int x, int y, t_mlxapp *app)
 {
 	if (keycode == 1)
-		if (app->fractal == JULIA || app->fractal == NOVA)
+		if (app->fractal == JULIA)
 			app->c = pos_to_complex(*app, x, y);
 	if (keycode == 3)
-		if (app->fractal == NOVA || app->fractal == NOVABROT)
+		if ( app->fractal == NOVABROT)
 		{
 			app->p = pos_to_complex(*app, x, y).r;
 			app->q = pos_to_complex(*app, x, y).i;

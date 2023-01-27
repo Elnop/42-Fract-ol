@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 21:04:30 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/26 15:09:04 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/01/27 19:19:39 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,29 +23,17 @@
 
 # define WINDOW_HEIGHT 1400
 # define WINDOW_WIDTH 1400
-
-# define MAX_ITER 20
-
+# define FRACTAL JULIA
+# define MAX_ITER 10
 # define C_R -0.743643887037151
 # define C_I 0.13182590420533
-# define P 3
-# define Q 2
-
-// # define C_R -0.743643887037151
-// # define C_I 0.13182590420533
-
-// # define C_R -0.038088
-// # define C_I 0.9754633
-
-// # define C_R 0.285
-// # define C_I 0.01
+# define P 2
+# define P_ADD 1
 
 typedef enum e_fractal {
 	JULIA,
 	MANDELBROT,
-	ABSBROT,
 	BURNING_SHIP,
-	NOVABROT,
 }	t_fractal;
 
 typedef struct s_complex
@@ -83,8 +71,7 @@ typedef struct s_mlxapp {
 	void		*win;
 	t_fractal	fractal;
 	t_complex	c;
-	int			p;
-	int			q;
+	double		p;
 	size_t		max_iter;
 	double		zoom;
 	double		offset_x;
@@ -95,7 +82,7 @@ typedef struct s_mlxapp {
 t_complex	pos_to_complex(t_mlxapp app, int x, int y);
 int			inter_to_rgb_hues(size_t iter_count, size_t max_iter);
 // APP
-bool		init_app(t_mlxapp *app, enum e_fractal fractal);
+bool		init_app(t_mlxapp *app, enum e_fractal fractal, double c_r, double c_i);
 int			destroy_app(t_mlxapp *app);
 // HOOKS
 void		init_hooks(t_mlxapp *app);

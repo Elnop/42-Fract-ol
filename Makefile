@@ -11,7 +11,6 @@ FILES = main \
 		images \
 		julia \
 		mandelbrot \
-		absbrot \
 		burning_ship \
 
 SRCS_DIR = src

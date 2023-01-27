@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 20:24:55 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/24 21:07:41 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/01/27 19:29:28 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_image	image_new(void	*mlx)
 {
-	t_image img;
+	t_image	img;
 
 	img.img = mlx_new_image(mlx, WINDOW_WIDTH, WINDOW_HEIGHT);
 	if (!img.img)

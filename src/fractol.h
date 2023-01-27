@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 21:04:30 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/27 19:19:39 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/01/27 19:31:15 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,8 @@ typedef struct s_mlxapp {
 t_complex	pos_to_complex(t_mlxapp app, int x, int y);
 int			inter_to_rgb_hues(size_t iter_count, size_t max_iter);
 // APP
-bool		init_app(t_mlxapp *app, enum e_fractal fractal, double c_r, double c_i);
+bool		init_app(t_mlxapp *app, enum e_fractal fractal,
+				double c_r, double c_i);
 int			destroy_app(t_mlxapp *app);
 // HOOKS
 void		init_hooks(t_mlxapp *app);

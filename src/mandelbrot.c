@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 23:22:15 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/27 18:22:34 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/01/27 19:30:05 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ size_t	iter_mandelbrot(t_mlxapp app, t_complex c)
 			return (iter);
 		z = (t_complex){
 			.r = pow(z.r * z.r + z.i * z.i, app.p / 2)
-				* cos(app.p * atan2(z.i, z.r)) + c.r,
+			* cos(app.p * atan2(z.i, z.r)) + c.r,
 			.i = pow(z.r * z.r + z.i * z.i, app.p / 2)
-				* sin(app.p * atan2(z.i, z.r)) + c.i
+			* sin(app.p * atan2(z.i, z.r)) + c.i
 		};
 		iter++;
 	}

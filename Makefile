@@ -50,6 +50,6 @@ makelibs:
 
 cleanlibs:
 	make fclean -C $(INCLUDES_FOLDER)/$(LIBLP_DIR)
-	make -C $(INCLUDES_FOLDER)/$(MLX_DIR)
+	make clean -C $(INCLUDES_FOLDER)/$(MLX_DIR)
 
 .PHONY: all clean fclean re makelib cleanlib

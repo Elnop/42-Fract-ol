@@ -4,3 +4,6 @@
 [submodule "liblp_c"]
 	path = libs/liblp_c
 	url = git@github.com:Elnop/liblp_c
+[submodule "libs/minilibx-linux"]
+	path = libs/minilibx-linux
+	url = git@github.com:42Paris/minilibx-linux.git

@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 20:26:16 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/27 19:30:31 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/02/09 23:32:41 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,20 @@ int	inter_to_rgb_hues(size_t iter_count, size_t max_iter)
 	else
 		color = (t_color){.r = (char)255, .b = (char)((360 - hue) / 60 * 255)};
 	return (color.hex);
+}
+
+int	inter_to_b_hues(size_t iter_count, size_t max_iter)
+{
+	t_color	color;
+
+	color = (t_color){.b = (char)100 + (iter_count / max_iter * 155)};
+	return (color.hex);
+}
+
+int	get_color(t_mlxapp app, size_t iter_count)
+{
+	if (app.color == 1)
+		return (inter_to_rgb_hues(iter_count, app.max_iter));
+	else
+		return (inter_to_b_hues(iter_count, app.max_iter));
 }

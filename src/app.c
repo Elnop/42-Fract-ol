@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:00:14 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/27 18:59:46 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/02/09 00:45:00 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ bool	init_app(t_mlxapp *app, enum e_fractal fractal, double c_r, double c_i)
 	app->zoom = 1.0;
 	app->offset_x = 0.0;
 	app->offset_y = 0.0;
+	app->color = 0;
 	return (true);
 }
 

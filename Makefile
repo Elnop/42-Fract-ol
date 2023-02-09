@@ -19,13 +19,13 @@ SRCS = $(addprefix $(SRCS_DIR)/, $(addsuffix .c, $(FILES)))
 OBJS_DIR = obj
 OBJS = ${patsubst ${SRCS_DIR}/%.c, ${OBJS_DIR}/%.o, ${SRCS}}
 
-INCLUDES_FOLDER = includes
+LIBS_FOLDER = libs
 
 LIBLP_DIR = liblp_c
-LIBLP = $(INCLUDES_FOLDER)/$(LIBLP_DIR)/liblp.a
+LIBLP = $(LIBS_FOLDER)/$(LIBLP_DIR)/liblp.a
 
 MLX_DIR = minilibx-linux
-MLX = ./$(INCLUDES_FOLDER)/$(MLX_DIR)/libmlx_Linux.a
+MLX = ./$(LIBS_FOLDER)/$(MLX_DIR)/libmlx_Linux.a
 
 all: makelibs $(OBJS) $(NAME)
 
@@ -45,11 +45,11 @@ fclean: clean
 re: clean all
 
 makelibs:
-	make -C $(INCLUDES_FOLDER)/$(MLX_DIR)
-	make -C $(INCLUDES_FOLDER)/$(LIBLP_DIR)
+	make -C $(LIBS_FOLDER)/$(MLX_DIR)
+	make -C $(LIBS_FOLDER)/$(LIBLP_DIR)
 
 cleanlibs:
-	make fclean -C $(INCLUDES_FOLDER)/$(LIBLP_DIR)
-	make clean -C $(INCLUDES_FOLDER)/$(MLX_DIR)
+	make fclean -C $(LIBS_FOLDER)/$(LIBLP_DIR)
+	make clean -C $(LIBS_FOLDER)/$(MLX_DIR)
 
 .PHONY: all clean fclean re makelib cleanlib

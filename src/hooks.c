@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 20:41:20 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/27 18:11:18 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/02/09 23:29:40 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,19 @@ static void	zoom_events(int keycode, t_mlxapp *app)
 
 static int	hooks_handler(int keycode, t_mlxapp *app)
 {
+	if (keycode == XK_c && app->color)
+		app->color = 0;
+	else if (keycode == XK_c && !app->color)
+		app->color = 1;
+	(void)(keycode == XK_i && (app->max_iter = 10));
 	if (keycode == XK_r)
 	{
 		app->zoom = 1.0;
 		app->offset_x = 0;
 		app->offset_y = 0;
 	}
-	if (keycode == XK_i)
-		app->max_iter = 10;
-	if (keycode == XK_p)
-		app->p += P_ADD;
-	if (keycode == XK_o)
-		app->p -= P_ADD;
+	(void)((keycode == XK_p) && (app->p += P_ADD));
+	(void)((keycode == XK_o) && (app->p -= P_ADD));
 	if (keycode == XK_Escape)
 	{
 		destroy_app(app);
@@ -56,8 +57,7 @@ static int	hooks_handler(int keycode, t_mlxapp *app)
 static int	mouse_hooks_handler(int keycode, int x, int y, t_mlxapp *app)
 {
 	if (keycode == 1)
-		if (app->fractal == JULIA)
-			app->c = pos_to_complex(*app, x, y);
+		app->c = pos_to_complex(*app, x, y);
 	if (keycode == 4)
 		app->zoom /= 2;
 	if (keycode == 5)

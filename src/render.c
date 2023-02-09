@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 22:12:00 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/27 19:29:08 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/02/09 00:52:31 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	render(t_mlxapp app)
 			iter = iter_fractal(app, z);
 			if (iter)
 				image_put_px(img, x, y,
-					inter_to_rgb_hues(iter, app.max_iter));
+					get_color(app, iter));
 			x++;
 		}
 		y++;

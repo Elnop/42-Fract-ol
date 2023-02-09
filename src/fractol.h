@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 21:04:30 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/27 19:31:15 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/02/09 01:00:18 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@
 
 # include "../includes/liblp_c/liblp.h"
 
-# define WINDOW_HEIGHT 1400
-# define WINDOW_WIDTH 1400
+# define WINDOW_HEIGHT 700
+# define WINDOW_WIDTH 700
 # define FRACTAL JULIA
 # define MAX_ITER 10
-# define C_R -0.743643887037151
-# define C_I 0.13182590420533
+# define C_R -0.8
+# define C_I 0.156
 # define P 2
 # define P_ADD 1
 
@@ -34,6 +34,7 @@ typedef enum e_fractal {
 	JULIA,
 	MANDELBROT,
 	BURNING_SHIP,
+	PHOENIX
 }	t_fractal;
 
 typedef struct s_complex
@@ -59,9 +60,9 @@ typedef union s_color {
 	int	hex;
 	struct
 	{
-		char	r;
-		char	g;
 		char	b;
+		char	g;
+		char	r;
 		char	a;
 	};
 }	t_color;
@@ -76,11 +77,12 @@ typedef struct s_mlxapp {
 	double		zoom;
 	double		offset_x;
 	double		offset_y;
+	int			color;
 }	t_mlxapp;
 
 // CONVERTIONS
 t_complex	pos_to_complex(t_mlxapp app, int x, int y);
-int			inter_to_rgb_hues(size_t iter_count, size_t max_iter);
+int			get_color(t_mlxapp app, size_t iter_count);
 // APP
 bool		init_app(t_mlxapp *app, enum e_fractal fractal,
 				double c_r, double c_i);

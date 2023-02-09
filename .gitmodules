@@ -3,4 +3,4 @@
 	url = git@github.com:42Paris/minilibx-linux.git
 [submodule "liblp_c"]
 	path = libs/liblp_c
-	url = https://github.com/Elnop/liblp_c
+	url = git@github.com:Elnop/liblp_c

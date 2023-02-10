@@ -29,14 +29,14 @@ My lib_ft (first project of 42 Scool)
 [--> repo](https://github.com/Elnop/liblp_c/tree/71c5582182fd6706b3a9488fe80dd73052b5859e)
 ## Controls
 
-- **Molette:** + / - Zoom  
-- **Fleches:** move image  
+- **Scroll:** + / - Zoom  
+- **Arrows:** move image  
 - **Z:** - Iterations  
 - **X:** + Iterations  
 
 ### Julia
 
-- **Left Clique:**: set constante
+- **Left Click:**: set constante
 
 #### Mandelbrot
 

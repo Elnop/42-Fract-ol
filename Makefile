@@ -1,7 +1,7 @@
 NAME = fractol
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror -Ofast
 
 FILES = main \
 		render \
@@ -27,12 +27,18 @@ LIBLP = $(LIBS_FOLDER)/$(LIBLP_DIR)/liblp.a
 MLX_DIR = minilibx-linux
 MLX = ./$(LIBS_FOLDER)/$(MLX_DIR)/libmlx_Linux.a
 
-all: makelibs $(OBJS) $(NAME)
+LIBS = $(MLX) $(LIBLP)
 
-$(NAME): $(OBJS)
-	$(CC) $^ $(MLX) $(LIBLP) -lm -lXext -lX11 -o $@
+INCLUDES_DIR = includes
+INCLUDES_FILES = fractol.h
+INCLUDES = $(addprefix $(INCLUDES_DIR)/, $(INCLUDES_FILES))
 
-${OBJS_DIR}/%.o: ${SRCS_DIR}/%.c
+all: $(NAME)
+
+$(NAME): $(LIBS) $(OBJS)
+	$(CC) $(OBJS) $(LIBS) -lm -lXext -lX11 -o $@
+
+${OBJS_DIR}/%.o: ${SRCS_DIR}/%.c $(INCLUDES)
 	@mkdir -p $(OBJS_DIR)
 	$(CC) $(CFLAGS) -o $@ -c $<
 
@@ -44,7 +50,7 @@ fclean: clean
 
 re: clean all
 
-makelibs:
+$(LIBS):
 	make -C $(LIBS_FOLDER)/$(MLX_DIR)
 	make -C $(LIBS_FOLDER)/$(LIBLP_DIR)
 

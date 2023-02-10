@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 21:04:30 by lperroti          #+#    #+#             */
-/*   Updated: 2023/02/09 01:00:18 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/02/10 02:42:27 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 
 # define XK_MISCELLANY
 # define XK_LATIN1
-# include "../includes/minilibx-linux/mlx.h"
+# include "../libs/minilibx-linux/mlx.h"
 # include <X11/keysymdef.h>
 # include <math.h>
 
-# include "../includes/liblp_c/liblp.h"
+# include "../libs/liblp_c/liblp.h"
 
 # define WINDOW_HEIGHT 700
 # define WINDOW_WIDTH 700
 # define FRACTAL JULIA
-# define MAX_ITER 10
+# define MAX_ITER 20
 # define C_R -0.8
 # define C_I 0.156
 # define P 2

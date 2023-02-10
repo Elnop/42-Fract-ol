@@ -6,11 +6,11 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 20:24:55 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/27 19:29:28 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/02/10 02:27:10 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 t_image	image_new(void	*mlx)
 {

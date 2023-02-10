@@ -6,11 +6,11 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 23:22:15 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/27 19:30:05 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/02/10 02:27:10 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 #include <math.h>
 
 size_t	iter_mandelbrot(t_mlxapp app, t_complex c)

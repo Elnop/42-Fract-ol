@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:36:24 by lperroti          #+#    #+#             */
-/*   Updated: 2023/02/09 00:37:17 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/02/10 02:27:10 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 
 -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_*/
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 static double	arg_c_r(int ac, char **av)
 {

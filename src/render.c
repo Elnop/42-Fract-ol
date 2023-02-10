@@ -6,11 +6,11 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 22:12:00 by lperroti          #+#    #+#             */
-/*   Updated: 2023/02/09 00:52:31 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/02/10 02:27:10 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 static	size_t	iter_fractal(t_mlxapp app, t_complex z)
 {

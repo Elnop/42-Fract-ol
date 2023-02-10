@@ -6,11 +6,11 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 20:41:20 by lperroti          #+#    #+#             */
-/*   Updated: 2023/02/09 23:29:40 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/02/10 02:27:10 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 #include <math.h>
 
 static void	zoom_events(int keycode, t_mlxapp *app)

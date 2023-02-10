@@ -6,12 +6,11 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:42:33 by lperroti          #+#    #+#             */
-/*   Updated: 2023/01/27 18:13:40 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/02/10 02:27:10 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
-#include <math.h>
+#include "../includes/fractol.h"
 
 size_t	iter_burning_ship(t_mlxapp app, t_complex c)
 {

@@ -6,11 +6,11 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 20:26:16 by lperroti          #+#    #+#             */
-/*   Updated: 2023/02/09 23:32:41 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/02/10 02:25:51 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 t_complex	pos_to_complex(t_mlxapp app, int x, int y)
 {

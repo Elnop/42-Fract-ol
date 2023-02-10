@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:36:24 by lperroti          #+#    #+#             */
-/*   Updated: 2023/02/10 02:27:10 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/02/10 14:30:04 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static t_fractal	args_to_fractal(int ac, char **av)
 	if (ac < 2)
 	{
 		lp_putendl_fd(
-			"You can choise julia, mandelbrot or burning_ship.\
+			"You can choose julia, mandelbrot or burning_ship.\
 			\nfor julia you can precise C: ./fractol [C REAL] [C IMG]",
 			2);
 		exit(0);

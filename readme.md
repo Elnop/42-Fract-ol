@@ -21,12 +21,12 @@ C_I: constant partie imaginary*
 
 ### MinilibX (linux)
 
-X11 lib wrapper
-
+X11 lib wrapper  
+[--> repo](https://github.com/42Paris/minilibx-linux/tree/7dc53a411a7d4ae286c60c6229bd1e395b0efb82)
 ### Liblp_c
 
-My lib_ft (first project of 42 Scool)
-
+My lib_ft (first project of 42 Scool)  
+[--> repo](https://github.com/Elnop/liblp_c/tree/71c5582182fd6706b3a9488fe80dd73052b5859e)
 ## Controls
 
 - **Molette:** + / - Zoom  

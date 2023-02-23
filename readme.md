@@ -34,23 +34,20 @@ My lib_ft (first project of 42 Scool)
 - **Z:** - Iterations  
 - **X:** + Iterations  
 
-### Julia
+## Julia
 
 - **Left Click:**: set constante
 
-#### Mandelbrot
+![julia image](./assets/images/julia.gif "Julia")
+
+## Mandelbrot
 
 - **O:** - POWER  
 - **P:** + POWER
 
-## Preview
-![julia image](./assets/images/julia.png "Julia")
-![mandelbrot image](./assets/images/mandelbrot.png "Mandelbrot")
-![julia image](./assets/images/burning_ship.png "Burning Ship")
-![multibrot image](./assets/images/multibrot3.png "Mandelbrot")
-![multibrot image](./assets/images/multibrot4.png "multibrot")
-![multibrot image](./assets/images/multibrot5.png "multibrot")
-![multibrot image](./assets/images/multibrot96.png "multibrot")
-![multibrot image](./assets/images/multibrot96zoom1.png "multibrot")
-![multibrot image](./assets/images/multibrot96zoom2.png "multibrot")
-![multibrot image](./assets/images/multibrot96zoom3.png "multibrot")
+![burning_ship image](./assets/images/burning_ship.gif "Burning Ship")
+
+## Burning Ship
+
+![multibrot image](./assets/images/multibrot.gif "Mandelbrot")
+

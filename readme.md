@@ -40,14 +40,14 @@ My lib_ft (first project of 42 Scool)
 
 ![julia image](./assets/images/julia.gif "Julia")
 
-## Mandelbrot
+## Mandelbrot / Multibrot
 
-- **O:** - POWER  
+- **O:** - POWER
 - **P:** + POWER
 
-![burning_ship image](./assets/images/burning_ship.gif "Burning Ship")
+![multibrot image](./assets/images/multibrot.gif "Mandelbrot")
 
 ## Burning Ship
 
-![multibrot image](./assets/images/multibrot.gif "Mandelbrot")
+![burning_ship image](./assets/images/burning_ship.gif "Burning Ship")
 

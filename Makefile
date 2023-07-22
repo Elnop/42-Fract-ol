@@ -5,7 +5,7 @@ CFLAGS = -Wall -Wextra -Werror -Ofast
 
 FILES = main \
 		render \
-		app \
+		app_init_destroy \
 		convert \
 		hooks \
 		images \

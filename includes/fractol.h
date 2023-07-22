@@ -78,6 +78,7 @@ typedef struct s_mlxapp {
 	double		offset_x;
 	double		offset_y;
 	int			color;
+	bool		mouse_pos_to_const;
 }	t_mlxapp;
 
 // CONVERTIONS

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   app.c                                              :+:      :+:    :+:   */
+/*   app_init_destroy.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:00:14 by lperroti          #+#    #+#             */
-/*   Updated: 2023/02/10 02:27:10 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/07/22 04:20:31 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ bool	init_app(t_mlxapp *app, enum e_fractal fractal, double c_r, double c_i)
 	app->offset_x = 0.0;
 	app->offset_y = 0.0;
 	app->color = 0;
+	app->mouse_pos_to_const = false;
 	return (true);
 }
 

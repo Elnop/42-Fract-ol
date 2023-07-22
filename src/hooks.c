@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 20:41:20 by lperroti          #+#    #+#             */
-/*   Updated: 2023/02/10 02:27:10 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/07/22 08:02:28 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ static void	zoom_events(int keycode, t_mlxapp *app)
 
 static int	hooks_handler(int keycode, t_mlxapp *app)
 {
+	if (keycode == XK_w)
+		app->mouse_pos_to_const = !app->mouse_pos_to_const;
 	if (keycode == XK_c && app->color)
 		app->color = 0;
 	else if (keycode == XK_c && !app->color)
@@ -54,10 +56,17 @@ static int	hooks_handler(int keycode, t_mlxapp *app)
 	return (1);
 }
 
+static int	mousemove_handler(int x, int y, t_mlxapp *app)
+{
+	// if (app->mouse_pos_to_const)
+	app->c = pos_to_complex(*app, x, y);
+	render(*app);
+	return 0;
+}
+
 static int	mouse_hooks_handler(int keycode, int x, int y, t_mlxapp *app)
 {
-	if (keycode == 1)
-		app->c = pos_to_complex(*app, x, y);
+	
 	if (keycode == 4)
 		app->zoom /= 2;
 	if (keycode == 5)
@@ -83,4 +92,5 @@ void	init_hooks(t_mlxapp *app)
 	mlx_hook(app->win, 2, 1L << 0, hooks_handler, app);
 	mlx_hook(app->win, 17, 0, destroy_app, app);
 	mlx_mouse_hook(app->win, mouse_hooks_handler, app);
+	mlx_hook(app->win, 6, 1L << 6, mousemove_handler, app);
 }

@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 20:41:20 by lperroti          #+#    #+#             */
-/*   Updated: 2023/07/22 08:02:28 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/07/22 09:16:11 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,11 @@ static int	hooks_handler(int keycode, t_mlxapp *app)
 
 static int	mousemove_handler(int x, int y, t_mlxapp *app)
 {
-	// if (app->mouse_pos_to_const)
-	app->c = pos_to_complex(*app, x, y);
-	render(*app);
+	if (app->mouse_pos_to_const)
+	{
+		app->c = pos_to_complex(*app, x, y);
+		render(*app);
+	}
 	return 0;
 }
 

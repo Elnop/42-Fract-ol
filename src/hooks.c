@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 20:41:20 by lperroti          #+#    #+#             */
-/*   Updated: 2023/07/22 09:16:11 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/10/15 17:45:22 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,23 +52,18 @@ static int	hooks_handler(int keycode, t_mlxapp *app)
 	if (app->max_iter > 0 && keycode == XK_z)
 		app->max_iter = app->max_iter / 1.1 - 1;
 	zoom_events(keycode, app);
-	render(*app);
 	return (1);
 }
 
 static int	mousemove_handler(int x, int y, t_mlxapp *app)
 {
 	if (app->mouse_pos_to_const)
-	{
 		app->c = pos_to_complex(*app, x, y);
-		render(*app);
-	}
-	return 0;
+	return (0);
 }
 
 static int	mouse_hooks_handler(int keycode, int x, int y, t_mlxapp *app)
 {
-	
 	if (keycode == 4)
 		app->zoom /= 2;
 	if (keycode == 5)
@@ -85,7 +80,6 @@ static int	mouse_hooks_handler(int keycode, int x, int y, t_mlxapp *app)
 				- (-2 / app->zoom + app->offset_y)
 				);
 	}
-	render(*app);
 	return (keycode);
 }
 

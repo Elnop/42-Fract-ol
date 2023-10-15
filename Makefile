@@ -12,6 +12,7 @@ FILES = main \
 		julia \
 		mandelbrot \
 		burning_ship \
+		launcher
 
 SRCS_DIR = src
 SRCS = $(addprefix $(SRCS_DIR)/, $(addsuffix .c, $(FILES)))

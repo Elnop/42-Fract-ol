@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 21:04:30 by lperroti          #+#    #+#             */
-/*   Updated: 2023/02/10 05:57:36 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/10/15 17:24:54 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ size_t		iter_absbrot(t_mlxapp app, t_complex z);
 size_t		iter_burning_ship(t_mlxapp app, t_complex z);
 size_t		iter_julia(t_mlxapp app, t_complex z);
 // RENDER
-void		render(t_mlxapp app);
+void		launcher(t_mlxapp	*app);
+int			render(t_mlxapp *app);
 
 #endif

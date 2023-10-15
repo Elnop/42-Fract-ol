@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:36:24 by lperroti          #+#    #+#             */
-/*   Updated: 2023/02/10 14:30:04 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/10/15 17:25:02 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	main(int ac, char **av)
 			arg_c_r(ac, av), arg_c_i(ac, av)))
 		return ((void)lp_putendl_fd("Can't init MLX App", 1), 1);
 	init_hooks(&app);
-	render(app);
+	launcher(&app);
 	mlx_loop(app.mlx);
 	return (1);
 }

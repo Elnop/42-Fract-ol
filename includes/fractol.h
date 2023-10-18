@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 21:04:30 by lperroti          #+#    #+#             */
-/*   Updated: 2023/10/15 17:24:54 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/10/18 08:37:17 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@
 # define WINDOW_WIDTH 700
 # define FRACTAL JULIA
 # define MAX_ITER 20
+# define ANIMATE_BORN 1
+# define ANIMATE_STEP 0.03
 # define C_R -0.8
 # define C_I 0.156
 # define P 2
@@ -79,6 +81,8 @@ typedef struct s_mlxapp {
 	double		offset_y;
 	int			color;
 	bool		mouse_pos_to_const;
+	bool		animate;
+	size_t		animate_frame;
 }	t_mlxapp;
 
 // CONVERTIONS
@@ -101,6 +105,7 @@ size_t		iter_absbrot(t_mlxapp app, t_complex z);
 size_t		iter_burning_ship(t_mlxapp app, t_complex z);
 size_t		iter_julia(t_mlxapp app, t_complex z);
 // RENDER
+void    	animate(t_mlxapp *papp);
 void		launcher(t_mlxapp	*app);
 int			render(t_mlxapp *app);
 

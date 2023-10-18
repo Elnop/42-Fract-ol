@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 22:12:00 by lperroti          #+#    #+#             */
-/*   Updated: 2023/10/15 17:43:52 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/10/18 07:01:43 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ int	render(t_mlxapp *papp)
 	t_complex	z;
 	size_t		iter;
 
+	if (papp->animate)
+		animate(papp);
 	if (!has_update(papp))
 		return (0);
 	img = image_new(papp->mlx);

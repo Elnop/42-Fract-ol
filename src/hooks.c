@@ -6,7 +6,7 @@
 /*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 20:41:20 by lperroti          #+#    #+#             */
-/*   Updated: 2023/10/15 17:45:22 by lperroti         ###   ########.fr       */
+/*   Updated: 2023/10/18 07:04:36 by lperroti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ static void	zoom_events(int keycode, t_mlxapp *app)
 
 static int	hooks_handler(int keycode, t_mlxapp *app)
 {
+	if (keycode == XK_a)
+	{
+		app->animate = !app->animate;
+		if (app->animate)
+			app->c = (t_complex){-2, -2};
+	}
 	if (keycode == XK_w)
 		app->mouse_pos_to_const = !app->mouse_pos_to_const;
 	if (keycode == XK_c && app->color)

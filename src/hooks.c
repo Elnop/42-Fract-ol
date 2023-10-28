@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   hooks.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 20:41:20 by lperroti          #+#    #+#             */
-/*   Updated: 2023/10/18 07:04:36 by lperroti         ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   hooks.c											:+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: lperroti <lperroti@student.42.fr>		  +#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2023/01/21 20:41:20 by lperroti		  #+#	#+#			 */
+/*   Updated: 2023/10/18 07:04:36 by lperroti		 ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
@@ -27,6 +27,10 @@ static void	zoom_events(int keycode, t_mlxapp *app)
 
 static int	hooks_handler(int keycode, t_mlxapp *app)
 {
+	if (keycode == XK_n)
+		app->animate_frame_time += 1000;
+	if (keycode == XK_m)
+		app->animate_frame_time -= 1000;
 	if (keycode == XK_a)
 	{
 		app->animate = !app->animate;

@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 21:04:30 by lperroti          #+#    #+#             */
-/*   Updated: 2023/10/18 08:37:17 by lperroti         ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   fractol.h										  :+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: lperroti <lperroti@student.42.fr>		  +#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2023/01/19 21:04:30 by lperroti		  #+#	#+#			 */
+/*   Updated: 2023/10/18 08:37:17 by lperroti		 ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
@@ -70,19 +70,20 @@ typedef union s_color {
 }	t_color;
 
 typedef struct s_mlxapp {
-	void		*mlx;
-	void		*win;
-	t_fractal	fractal;
-	t_complex	c;
-	double		p;
-	size_t		max_iter;
-	double		zoom;
-	double		offset_x;
-	double		offset_y;
-	int			color;
-	bool		mouse_pos_to_const;
-	bool		animate;
-	size_t		animate_frame;
+	void			*mlx;
+	void			*win;
+	t_fractal		fractal;
+	t_complex		c;
+	double			p;
+	size_t			max_iter;
+	double			zoom;
+	double			offset_x;
+	double			offset_y;
+	int				color;
+	bool			mouse_pos_to_const;
+	bool			animate;
+	size_t			animate_frame;
+	unsigned int	animate_frame_time;
 }	t_mlxapp;
 
 // CONVERTIONS
@@ -105,7 +106,7 @@ size_t		iter_absbrot(t_mlxapp app, t_complex z);
 size_t		iter_burning_ship(t_mlxapp app, t_complex z);
 size_t		iter_julia(t_mlxapp app, t_complex z);
 // RENDER
-void    	animate(t_mlxapp *papp);
+void		animate(t_mlxapp *papp);
 void		launcher(t_mlxapp	*app);
 int			render(t_mlxapp *app);
 

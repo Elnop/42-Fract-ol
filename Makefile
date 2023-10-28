@@ -24,7 +24,7 @@ OBJS = ${patsubst ${SRCS_DIR}/%.c, ${OBJS_DIR}/%.o, ${SRCS}}
 LIBS_FOLDER = libs
 
 LIBLP_DIR = liblp_c
-LIBLP = $(LIBS_FOLDER)/$(LIBLP_DIR)/liblp.a
+LIBLP = $(LIBS_FOLDER)/$(LIBLP_DIR)/liblp_c.a
 
 MLX_DIR = minilibx-linux
 MLX = ./$(LIBS_FOLDER)/$(MLX_DIR)/libmlx_Linux.a

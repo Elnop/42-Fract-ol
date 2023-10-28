@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   app_init_destroy.c                                 :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lperroti <lperroti@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 13:00:14 by lperroti          #+#    #+#             */
-/*   Updated: 2023/10/18 07:10:17 by lperroti         ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   app_init_destroy.c								 :+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: lperroti <lperroti@student.42.fr>		  +#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2023/01/20 13:00:14 by lperroti		  #+#	#+#			 */
+/*   Updated: 2023/10/18 07:10:17 by lperroti		 ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
@@ -35,6 +35,7 @@ bool	init_app(t_mlxapp *app, enum e_fractal fractal, double c_r, double c_i)
 	app->mouse_pos_to_const = false;
 	app->animate = false;
 	app->animate_frame = 0;
+	app->animate_frame_time = 5000;
 	return (true);
 }
 

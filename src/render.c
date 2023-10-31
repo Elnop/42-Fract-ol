@@ -58,10 +58,10 @@ int	render(t_mlxapp *papp)
 		return (0);
 	img = image_new(papp->mlx);
 	y = 0;
-	while (y < WINDOW_WIDTH)
+	while (y < WINDOW_HEIGHT)
 	{
 		x = 0;
-		while (x < WINDOW_HEIGHT)
+		while (x < WINDOW_WIDTH)
 		{
 			z = pos_to_complex(*papp, x, y);
 			iter = iter_fractal(*papp, z);

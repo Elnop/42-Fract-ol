@@ -17,7 +17,7 @@ bool	init_app(t_mlxapp *app, enum e_fractal fractal, double c_r, double c_i)
 	app->mlx = mlx_init();
 	if (!app->mlx)
 		return (false);
-	app->win = mlx_new_window(app->mlx, WINDOW_HEIGHT, WINDOW_WIDTH, "fractol");
+	app->win = mlx_new_window(app->mlx, WINDOW_WIDTH, WINDOW_HEIGHT, "fractol");
 	if (!app->win)
 		return (false);
 	app->fractal = fractal;

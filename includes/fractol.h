@@ -80,6 +80,8 @@ typedef struct s_mlxapp {
 	double			offset_x;
 	double			offset_y;
 	int				color;
+	int				color_start;
+	int				color_end;
 	bool			mouse_pos_to_const;
 	bool			animate;
 	size_t			animate_frame;

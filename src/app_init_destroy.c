@@ -32,6 +32,8 @@ bool	init_app(t_mlxapp *app, enum e_fractal fractal, double c_r, double c_i)
 	app->offset_x = 0.0;
 	app->offset_y = 0.0;
 	app->color = 0;
+	app->color_start = 0x0000FF;
+	app->color_end = 0xFF0000;
 	app->mouse_pos_to_const = false;
 	app->animate = false;
 	app->animate_frame = 0;

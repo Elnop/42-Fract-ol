@@ -38,17 +38,17 @@ int	inter_to_rgb_hues(size_t iter_count, size_t max_iter)
 
 	hue = (float)iter_count / max_iter * 360;
 	if (hue > 300)
-		color = (t_color){.b = (char)255, .g = (char)((240 - hue) / 60 * 255)};
+		color = (t_color){.r = (char)255, .g = (char)((240 - hue) / 60 * 255)};
 	else if (hue > 240)
-		color = (t_color){.g = (char)255, .b = (char)((hue - 120) / 60 * 255)};
+		color = (t_color){.g = (char)255, .r = (char)((hue - 120) / 60 * 255)};
 	else if (hue > 180)
 		color = (t_color){.g = (char)255, .r = (char)((120 - hue) / 60 * 255)};
 	else if (hue > 120)
-		color = (t_color){.r = (char)255, .g = (char)(hue / 60 * 255)};
+		color = (t_color){.b = (char)255, .g = (char)(hue / 60 * 255)};
 	else if (hue > 60)
-		color = (t_color){.b = (char)255, .r = (char)((hue - 240) / 60 * 255)};
+		color = (t_color){.r = (char)255, .b = (char)((hue - 240) / 60 * 255)};
 	else
-		color = (t_color){.r = (char)255, .b = (char)((360 - hue) / 60 * 255)};
+		color = (t_color){.b = (char)255, .r = (char)((360 - hue) / 60 * 255)};
 	return (color.hex);
 }
 
@@ -60,10 +60,29 @@ int	inter_to_b_hues(size_t iter_count, size_t max_iter)
 	return (color.hex);
 }
 
+int get_color_in_gradiant(t_mlxapp app, double percent)
+{
+	(void)app;
+
+	// percent *= 2;
+	// if (percent > 100)
+	// 	percent = 100;
+	int start = app.color_start;
+	int end = app.color_end;
+	//return ((double)percent / 100.0) * start + (1.0 - (double)percent / 100.0) * end;
+	int test = start + (double)(end - start) * percent;
+	return test;
+}
+
 int	get_color(t_mlxapp app, size_t iter_count)
 {
+
+	if (!iter_count)
+		iter_count = app.max_iter;
 	if (app.color == 1)
 		return (inter_to_rgb_hues(iter_count, app.max_iter));
+	if (app.color == 2)
+		return (get_color_in_gradiant(app, (double)iter_count / app.max_iter));
 	else
 		return (inter_to_b_hues(iter_count, app.max_iter));
 }

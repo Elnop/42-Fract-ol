@@ -39,10 +39,12 @@ static int	hooks_handler(int keycode, t_mlxapp *app)
 	}
 	if (keycode == XK_w)
 		app->mouse_pos_to_const = !app->mouse_pos_to_const;
-	if (keycode == XK_c && app->color)
+	if (keycode == XK_1)
 		app->color = 0;
-	else if (keycode == XK_c && !app->color)
+	if (keycode == XK_2)
 		app->color = 1;
+	if (keycode == XK_3)
+		app->color = 2;
 	(void)(keycode == XK_i && (app->max_iter = 10));
 	if (keycode == XK_r)
 	{
